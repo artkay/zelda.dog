@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Zelda The French Bulldog" />
+    <meta name="keywords" content="Zelda, French Bulldog" />
+    <meta name="author" content="Art Kay" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zelda The French Bulldog</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-iphone-60x60.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="apple-touch-icon-ipad-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="apple-touch-icon-iphone-retina-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-icon-ipad-retina-152x152.png"
+    />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="ug/js/unitegallery.min.js"></script>
+    <link rel="stylesheet" href="ug/css/unite-gallery.css" type="text/css" />
+    <script
+      type="text/javascript"
+      src="ug/themes/tiles/ug-theme-tiles.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="ug/themes/default/ug-theme-default.css"
+      type="text/css"
+    />
+    <style>
+      a img {
+        outline: none;
+      }
+      .profile_pic {
+        opacity: 0.5;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 0;
+      }
+      .profile_pic:hover {
+        opacity: 1;
+      }
+      .profile {
+        width: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body style="background: #000; color: #fff; margin: 0">
+    <div
+      id="passport"
+      style="
+        margin: 50px auto 50px auto;
+        width: 500px;
+        padding: 10px;
+        visibility: hidden;
+      "
+    >
+      <p>
+        Zelda would like to sniff you. And, most likely, bite. Just in case.
+        When sniffing is not possible, Zelda accepts Parallel Passport as a form
+        of sharing your details.
+      </p>
+
+      <div id="message"></div>
+
+      <div class="parallel-login-button"></div>
+    </div>
+
+    <script>
+      var passport = document.getElementById("passport");
+      if (document.URL.indexOf("?identity") > 0) {
+        passport.style.visibility = "inherit";
+      } else {
+        passport.parentNode.removeChild(passport);
+      }
+    </script>
+
+    <script src="https://app.parallelmarkets.com/sdk/v1/parallel.js"></script>
+
+    <script>
+      Parallel.init({
+        client_id: "hV4niQIUTKXUCyyGSIMly",
+        environment: "demo",
+      });
+
+      function success(result) {
+        document.getElementById("message").innerHTML =
+          "Thanks for sharing your info.";
+      }
+
+      function failure(result) {
+        var msg = document.getElementById("message");
+        if (result.status == "not_authorized") {
+          msg.innerHTML =
+            "Please consent to access to complete your onboarding.";
+        } else {
+          console.error(result);
+          msg.innerHTML = "Looks like there was an issue.";
+        }
+      }
+
+      Parallel.subscribeWithButton(success, failure);
+    </script>
+    <div id="gallery" style="display: none">
+      <img
+        alt="Tired of this whole new year business"
+        src="pics/2022-01-01_10-15-48_UTC.jpg"
+        data-image="pics/2022-01-01_10-15-48_UTC.jpg"
+        data-description="Tired of this whole new year business"
+      /><img
+        alt="Trying to stay warm 🐶🗽❄️"
+        src="pics/2018-01-15_01-36-12_UTC.jpg"
+        data-image="pics/2018-01-15_01-36-12_UTC.jpg"
+        data-description="Trying to stay warm 🐶🗽❄️"
+      /><img
+        alt="Bulltaco 🐶🌮"
+        src="pics/2018-08-02_02-57-08_UTC.jpg"
+        data-image="pics/2018-08-02_02-57-08_UTC.jpg"
+        data-description="Bulltaco 🐶🌮"
+      /><img
+        alt=""
+        src="pics/2017-07-29_18-16-27_UTC.jpg"
+        data-image="pics/2017-07-29_18-16-27_UTC.jpg"
+        data-description=""
+      /><img
+        alt="French Bulldoctopus"
+        src="pics/2017-08-07_12-37-46_UTC.jpg"
+        data-image="pics/2017-08-07_12-37-46_UTC.jpg"
+        data-description="French Bulldoctopus"
+      /><img
+        alt="Looking at #empirestatebuilding on an afternoon walk earlier today."
+        src="pics/2017-04-27_02-26-12_UTC.jpg"
+        data-image="pics/2017-04-27_02-26-12_UTC.jpg"
+        data-description="Looking at #empirestatebuilding on an afternoon walk earlier today."
+      /><img
+        alt="Chilling"
+        src="pics/2017-12-27_03-35-30_UTC.jpg"
+        data-image="pics/2017-12-27_03-35-30_UTC.jpg"
+        data-description="Chilling"
+      /><img
+        alt="Is this for me, Papa? 🎁🎄"
+        src="pics/2018-12-24_19-14-26_UTC.jpg"
+        data-image="pics/2018-12-24_19-14-26_UTC.jpg"
+        data-description="Is this for me, Papa? 🎁🎄"
+      /><img
+        alt="😯"
+        src="pics/2020-10-24_04-32-47_UTC.jpg"
+        data-image="pics/2020-10-24_04-32-47_UTC.jpg"
+        data-description="😯"
+      /><img
+        alt=""
+        src="pics/2018-12-08_07-33-25_UTC.jpg"
+        data-image="pics/2018-12-08_07-33-25_UTC.jpg"
+        data-description=""
+      /><img
+        alt="I ❤️ my daddy!"
+        src="pics/2019-05-03_22-31-17_UTC.jpg"
+        data-image="pics/2019-05-03_22-31-17_UTC.jpg"
+        data-description="I ❤️ my daddy!"
+      /><img
+        alt=""
+        src="pics/2020-08-28_13-15-00_UTC.jpg"
+        data-image="pics/2020-08-28_13-15-00_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Almost 8 years ago #throwbackthursday"
+        src="pics/2019-03-28_23-09-57_UTC.jpg"
+        data-image="pics/2019-03-28_23-09-57_UTC.jpg"
+        data-description="Almost 8 years ago #throwbackthursday"
+      /><img
+        alt=""
+        src="pics/2017-08-06_14-09-46_UTC.jpg"
+        data-image="pics/2017-08-06_14-09-46_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2018-03-13_12-44-56_UTC.jpg"
+        data-image="pics/2018-03-13_12-44-56_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2021-07-23_16-44-46_UTC.jpg"
+        data-image="pics/2021-07-23_16-44-46_UTC.jpg"
+        data-description=""
+      /><img
+        alt="#motorhead"
+        src="pics/2020-06-03_15-07-18_UTC.jpg"
+        data-image="pics/2020-06-03_15-07-18_UTC.jpg"
+        data-description="#motorhead"
+      /><img
+        alt="Always on the guard 🐾"
+        src="pics/2021-01-04_17-31-05_UTC.jpg"
+        data-image="pics/2021-01-04_17-31-05_UTC.jpg"
+        data-description="Always on the guard 🐾"
+      /><img
+        alt="Chillin’    #frenchbullsogsofinstagram"
+        src="pics/2020-10-15_21-22-56_UTC.jpg"
+        data-image="pics/2020-10-15_21-22-56_UTC.jpg"
+        data-description="Chillin’    #frenchbullsogsofinstagram"
+      /><img
+        alt="Lazy Sunday"
+        src="pics/2017-10-08_15-33-22_UTC.jpg"
+        data-image="pics/2017-10-08_15-33-22_UTC.jpg"
+        data-description="Lazy Sunday"
+      /><img
+        alt=""
+        src="pics/2021-01-04_21-44-18_UTC_1.jpg"
+        data-image="pics/2021-01-04_21-44-18_UTC_1.jpg"
+        data-description=""
+      /><img
+        alt="Afternoon headshot"
+        src="pics/2017-05-20_21-00-05_UTC.jpg"
+        data-image="pics/2017-05-20_21-00-05_UTC.jpg"
+        data-description="Afternoon headshot"
+      /><img
+        alt="Since I am in Massachusetts now - does this make me a New English Bulldog? 🤔"
+        src="pics/2020-10-16_13-31-12_UTC.jpg"
+        data-image="pics/2020-10-16_13-31-12_UTC.jpg"
+        data-description="Since I am in Massachusetts now - does this make me a New English Bulldog? 🤔"
+      /><img
+        alt="👀👂"
+        src="pics/2019-04-14_00-20-22_UTC.jpg"
+        data-image="pics/2019-04-14_00-20-22_UTC.jpg"
+        data-description="👀👂"
+      /><img
+        alt="A little peanut butter, and you can even wash my paws. I usually hate it but now I don’t care, just let me eat all the yummy paste! 🥜"
+        src="pics/2019-02-10_18-23-39_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2019-02-10_18-23-39_UTC.jpg"
+        data-videomp4="2019-02-10_18-23-39_UTC.mp4"
+        data-description="A little peanut butter, and you can even wash my paws. I usually hate it but now I don’t care, just let me eat all the yummy paste! 🥜"
+      /><img
+        alt="🍗 🍗"
+        src="pics/2020-06-29_22-53-41_UTC.jpg"
+        data-image="pics/2020-06-29_22-53-41_UTC.jpg"
+        data-description="🍗 🍗"
+      /><img
+        alt="Look! Another dog!"
+        src="pics/2021-01-04_17-41-44_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2021-01-04_17-41-44_UTC.jpg"
+        data-videomp4="2021-01-04_17-41-44_UTC.mp4"
+        data-description="Look! Another dog!"
+      /><img
+        alt="It is waaaaay too cold out there ❄️ ❄️ ❄️"
+        src="pics/2017-11-11_04-28-49_UTC.jpg"
+        data-image="pics/2017-11-11_04-28-49_UTC.jpg"
+        data-description="It is waaaaay too cold out there ❄️ ❄️ ❄️"
+      /><img
+        alt=""
+        src="pics/2021-01-04_21-44-18_UTC_2.jpg"
+        data-image="pics/2021-01-04_21-44-18_UTC_2.jpg"
+        data-description=""
+      /><img
+        alt="Guard dog on Duty"
+        src="pics/2017-07-24_21-11-22_UTC.jpg"
+        data-image="pics/2017-07-24_21-11-22_UTC.jpg"
+        data-description="Guard dog on Duty"
+      /><img
+        alt="Is it still freezing cold outside? 🥶"
+        src="pics/2022-01-11_19-56-59_UTC.jpg"
+        data-image="pics/2022-01-11_19-56-59_UTC.jpg"
+        data-description="Is it still freezing cold outside? 🥶"
+      /><img
+        alt="🐾"
+        src="pics/2022-05-03_01-01-43_UTC.jpg"
+        data-image="pics/2022-05-03_01-01-43_UTC.jpg"
+        data-description="🐾"
+      /><img
+        alt=""
+        src="pics/2018-12-26_19-57-50_UTC.jpg"
+        data-image="pics/2018-12-26_19-57-50_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Hello fishies! 🐡🐠🐟"
+        src="pics/2019-01-04_18-02-22_UTC.jpg"
+        data-image="pics/2019-01-04_18-02-22_UTC.jpg"
+        data-description="Hello fishies! 🐡🐠🐟"
+      /><img
+        alt=""
+        src="pics/2019-06-23_16-44-09_UTC.jpg"
+        data-image="pics/2019-06-23_16-44-09_UTC.jpg"
+        data-description=""
+      /><img
+        alt="It fell off by itself! I haz nuthin to do with eet!"
+        src="pics/2020-11-23_16-06-48_UTC.jpg"
+        data-image="pics/2020-11-23_16-06-48_UTC.jpg"
+        data-description="It fell off by itself! I haz nuthin to do with eet!"
+      /><img
+        alt="Sunday afternoon nap"
+        src="pics/2017-07-23_21-14-34_UTC.jpg"
+        data-image="pics/2017-07-23_21-14-34_UTC.jpg"
+        data-description="Sunday afternoon nap"
+      /><img
+        alt="Morning bulldog."
+        src="pics/2017-04-29_13-46-40_UTC.jpg"
+        data-image="pics/2017-04-29_13-46-40_UTC.jpg"
+        data-description="Morning bulldog."
+      /><img
+        alt="Just about to have a good sleep"
+        src="pics/2017-10-11_02-24-22_UTC.jpg"
+        data-image="pics/2017-10-11_02-24-22_UTC.jpg"
+        data-description="Just about to have a good sleep"
+      /><img
+        alt="Enjoying New England fall"
+        src="pics/2021-10-20_03-03-30_UTC.jpg"
+        data-image="pics/2021-10-20_03-03-30_UTC.jpg"
+        data-description="Enjoying New England fall"
+      /><img
+        alt=""
+        src="pics/2017-07-22_15-24-00_UTC.jpg"
+        data-image="pics/2017-07-22_15-24-00_UTC.jpg"
+        data-description=""
+      /><img
+        alt="The 👂 is healing well, but still not sure if it will stand back up. Either way I am pretty. 🐾"
+        src="pics/2019-01-23_22-12-53_UTC.jpg"
+        data-image="pics/2019-01-23_22-12-53_UTC.jpg"
+        data-description="The 👂 is healing well, but still not sure if it will stand back up. Either way I am pretty. 🐾"
+      /><img
+        alt="Brooklyn Strong 💪"
+        src="pics/2020-05-04_05-11-23_UTC.jpg"
+        data-image="pics/2020-05-04_05-11-23_UTC.jpg"
+        data-description="Brooklyn Strong 💪"
+      /><img
+        alt="Running away from the paparazzi"
+        src="pics/2017-05-03_22-18-29_UTC.jpg"
+        data-image="pics/2017-05-03_22-18-29_UTC.jpg"
+        data-description="Running away from the paparazzi"
+      /><img
+        alt="Recovering from an👂 surgery. I am going to be fine, but I really don’t like the “anti flap hood” which makes me look like babushka. Or E.T."
+        src="pics/2019-01-05_07-16-12_UTC.jpg"
+        data-image="pics/2019-01-05_07-16-12_UTC.jpg"
+        data-description="Recovering from an👂 surgery. I am going to be fine, but I really don’t like the “anti flap hood” which makes me look like babushka. Or E.T."
+      /><img
+        alt="#throwbackthursday"
+        src="pics/2017-04-27_17-02-20_UTC.jpg"
+        data-image="pics/2017-04-27_17-02-20_UTC.jpg"
+        data-description="#throwbackthursday"
+      /><img
+        alt="Midnight concert 🐶🔊"
+        src="pics/2018-11-07_04-57-32_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2018-11-07_04-57-32_UTC.jpg"
+        data-videomp4="2018-11-07_04-57-32_UTC.mp4"
+        data-description="Midnight concert 🐶🔊"
+      /><img
+        alt="Waiting for my mom"
+        src="pics/2019-11-11_04-17-39_UTC.jpg"
+        data-image="pics/2019-11-11_04-17-39_UTC.jpg"
+        data-description="Waiting for my mom"
+      /><img
+        alt=""
+        src="pics/2019-03-26_22-25-05_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2019-03-26_22-25-05_UTC.jpg"
+        data-videomp4="2019-03-26_22-25-05_UTC.mp4"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2017-12-24_16-52-40_UTC.jpg"
+        data-image="pics/2017-12-24_16-52-40_UTC.jpg"
+        data-description=""
+      /><img alt=""The doc said I am getting better, but I am still unhappy with
+      the temperature measurement procedure" #veterinarian"
+      src="pics/2017-06-26_00-00-29_UTC.jpg" data-image="pics/2017-06-26_00-00-29_UTC.jpg"
+      data-description=""The doc said I am getting better, but I am still
+      unhappy with the temperature measurement procedure" #veterinarian"><img
+        alt="Almost 8 years ago I was just a puppy #throwbackthursday"
+        src="pics/2019-01-31_22-17-26_UTC.jpg"
+        data-image="pics/2019-01-31_22-17-26_UTC.jpg"
+        data-description="Almost 8 years ago I was just a puppy #throwbackthursday"
+      /><img
+        alt=""
+        src="pics/2020-03-20_19-45-21_UTC.jpg"
+        data-image="pics/2020-03-20_19-45-21_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2019-06-22_13-45-00_UTC.jpg"
+        data-image="pics/2019-06-22_13-45-00_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2021-01-03_22-24-57_UTC.jpg"
+        data-image="pics/2021-01-03_22-24-57_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Who's there!?"
+        src="pics/2017-07-28_01-03-49_UTC.jpg"
+        data-image="pics/2017-07-28_01-03-49_UTC.jpg"
+        data-description="Who's there!?"
+      /><img
+        alt="#latergram"
+        src="pics/2022-02-23_18-54-32_UTC.jpg"
+        data-image="pics/2022-02-23_18-54-32_UTC.jpg"
+        data-description="#latergram"
+      /><img
+        alt="6 years ago I was just a puppy in the wild #throwbackthursday"
+        src="pics/2017-09-29_01-39-50_UTC.jpg"
+        data-image="pics/2017-09-29_01-39-50_UTC.jpg"
+        data-description="6 years ago I was just a puppy in the wild #throwbackthursday"
+      /><img
+        alt="I’ve been an extra good girl at the vet and earned a delicious puppuccino 😋 #puppuccino"
+        src="pics/2022-04-13_20-56-11_UTC.jpg"
+        data-image="pics/2022-04-13_20-56-11_UTC.jpg"
+        data-description="I’ve been an extra good girl at the vet and earned a delicious puppuccino 😋 #puppuccino"
+      /><img
+        alt=""
+        src="pics/2018-08-19_17-29-30_UTC.jpg"
+        data-image="pics/2018-08-19_17-29-30_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Lazy Sunday portrait"
+        src="pics/2017-07-30_14-54-07_UTC.jpg"
+        data-image="pics/2017-07-30_14-54-07_UTC.jpg"
+        data-description="Lazy Sunday portrait"
+      /><img
+        alt="Chillin wif my hooman    oftheday"
+        src="pics/2018-02-01_05-52-59_UTC.jpg"
+        data-image="pics/2018-02-01_05-52-59_UTC.jpg"
+        data-description="Chillin wif my hooman    oftheday"
+      /><img
+        alt="It’s finally warm again."
+        src="pics/2019-04-19_22-51-14_UTC.jpg"
+        data-image="pics/2019-04-19_22-51-14_UTC.jpg"
+        data-description="It’s finally warm again."
+      /><img
+        alt="👀"
+        src="pics/2020-06-07_05-07-46_UTC.jpg"
+        data-image="pics/2020-06-07_05-07-46_UTC.jpg"
+        data-description="👀"
+      /><img
+        alt="Do you think this 🐦 is edible at all? 🤔"
+        src="pics/2020-04-13_01-30-24_UTC.jpg"
+        data-image="pics/2020-04-13_01-30-24_UTC.jpg"
+        data-description="Do you think this 🐦 is edible at all? 🤔"
+      /><img
+        alt=""
+        src="pics/2017-07-26_18-21-24_UTC.jpg"
+        data-image="pics/2017-07-26_18-21-24_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2017-10-04_04-47-59_UTC.jpg"
+        data-image="pics/2017-10-04_04-47-59_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Going for a walk"
+        src="pics/2018-02-08_23-41-20_UTC.jpg"
+        data-image="pics/2018-02-08_23-41-20_UTC.jpg"
+        data-description="Going for a walk"
+      /><img
+        alt="   #frienchbulldogsofinstagram"
+        src="pics/2018-09-09_17-15-29_UTC.jpg"
+        data-image="pics/2018-09-09_17-15-29_UTC.jpg"
+        data-description="   #frienchbulldogsofinstagram"
+      /><img
+        alt="Winter is coming ☃️"
+        src="pics/2018-12-18_21-52-20_UTC.jpg"
+        data-image="pics/2018-12-18_21-52-20_UTC.jpg"
+        data-description="Winter is coming ☃️"
+      /><img
+        alt="It’s snowing again..."
+        src="pics/2021-02-11_13-42-10_UTC.jpg"
+        data-image="pics/2021-02-11_13-42-10_UTC.jpg"
+        data-description="It’s snowing again..."
+      /><img
+        alt="Baby, it’s cold outside!"
+        src="pics/2019-01-31_14-29-40_UTC.jpg"
+        data-image="pics/2019-01-31_14-29-40_UTC.jpg"
+        data-description="Baby, it’s cold outside!"
+      /><img
+        alt="🍗🍗"
+        src="pics/2018-09-06_23-03-29_UTC.jpg"
+        data-image="pics/2018-09-06_23-03-29_UTC.jpg"
+        data-description="🍗🍗"
+      /><img
+        alt=""
+        src="pics/2019-04-14_18-53-58_UTC.jpg"
+        data-image="pics/2019-04-14_18-53-58_UTC.jpg"
+        data-description=""
+      /><img
+        alt="I am not a flower 🐶🌸
+Just got sick a little bit, but I will be fine by the time the cold is away ⛄️"
+        src="pics/2018-01-06_19-00-18_UTC.jpg"
+        data-image="pics/2018-01-06_19-00-18_UTC.jpg"
+        data-description="I am not a flower 🐶🌸
+Just got sick a little bit, but I will be fine by the time the cold is away ⛄️"
+      /><img
+        alt=""
+        src="pics/2020-11-29_01-36-28_UTC_1.jpg"
+        data-image="pics/2020-11-29_01-36-28_UTC_1.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2017-08-19_14-50-03_UTC.jpg"
+        data-image="pics/2017-08-19_14-50-03_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2020-11-29_01-36-28_UTC_3.jpg"
+        data-image="pics/2020-11-29_01-36-28_UTC_3.jpg"
+        data-description=""
+      /><img
+        alt="Chillin’ in my favorite bull-taco 🌮 The ear is still not up, but my parents and I think it’s even cuter this way."
+        src="pics/2019-02-05_23-34-13_UTC.jpg"
+        data-image="pics/2019-02-05_23-34-13_UTC.jpg"
+        data-description="Chillin’ in my favorite bull-taco 🌮 The ear is still not up, but my parents and I think it’s even cuter this way."
+      /><img
+        alt="I wish we had a fireplace but the heater is ok"
+        src="pics/2019-12-02_15-19-39_UTC.jpg"
+        data-image="pics/2019-12-02_15-19-39_UTC.jpg"
+        data-description="I wish we had a fireplace but the heater is ok"
+      /><img
+        alt="Got to finish that raccoon!"
+        src="pics/2020-12-24_14-43-20_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2020-12-24_14-43-20_UTC.jpg"
+        data-videomp4="2020-12-24_14-43-20_UTC.mp4"
+        data-description="Got to finish that raccoon!"
+      /><img
+        alt="Riding in a tough Soviet off-road car as a pup #throwbackthursday"
+        src="pics/2017-10-19_22-04-56_UTC.jpg"
+        data-image="pics/2017-10-19_22-04-56_UTC.jpg"
+        data-description="Riding in a tough Soviet off-road car as a pup #throwbackthursday"
+      /><img alt=""Can I haz dat all!?"" src="pics/2017-05-14_16-41-47_UTC.jpg"
+      data-image="pics/2017-05-14_16-41-47_UTC.jpg" data-description=""Can I haz dat
+      all!?""><img
+        alt=""
+        src="pics/2020-03-15_19-12-44_UTC.jpg"
+        data-image="pics/2020-03-15_19-12-44_UTC.jpg"
+        data-description=""
+      /><img
+        alt=""
+        src="pics/2020-11-29_01-36-28_UTC_2.jpg"
+        data-image="pics/2020-11-29_01-36-28_UTC_2.jpg"
+        data-description=""
+      /><img
+        alt="🌳🐶 Sunset at the park 🌞"
+        src="pics/2019-04-10_23-12-55_UTC.jpg"
+        data-image="pics/2019-04-10_23-12-55_UTC.jpg"
+        data-description="🌳🐶 Sunset at the park 🌞"
+      /><img
+        alt="I fits - I sits 🎸"
+        src="pics/2020-09-28_01-43-52_UTC.jpg"
+        data-image="pics/2020-09-28_01-43-52_UTC.jpg"
+        data-description="I fits - I sits 🎸"
+      /><img
+        alt=""
+        src="pics/2018-11-26_13-40-33_UTC.jpg"
+        data-image="pics/2018-11-26_13-40-33_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Barking at the monsters in my dreams"
+        src="pics/2020-03-25_23-18-19_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2020-03-25_23-18-19_UTC.jpg"
+        data-videomp4="2020-03-25_23-18-19_UTC.mp4"
+        data-description="Barking at the monsters in my dreams"
+      /><img
+        alt="The Face"
+        src="pics/2017-09-25_21-02-45_UTC.jpg"
+        data-image="pics/2017-09-25_21-02-45_UTC.jpg"
+        data-description="The Face"
+      /><img
+        alt="A walk? Outside? At 36 degrees? I am full of excitement."
+        src="pics/2017-11-11_22-04-38_UTC.jpg"
+        data-image="pics/2017-11-11_22-04-38_UTC.jpg"
+        data-description="A walk? Outside? At 36 degrees? I am full of excitement."
+      /><img
+        alt="Is it spring yet? 👀"
+        src="pics/2019-02-13_03-52-09_UTC.jpg"
+        data-image="pics/2019-02-13_03-52-09_UTC.jpg"
+        data-description="Is it spring yet? 👀"
+      /><img
+        alt="Oh, is it raining outside?.. I am sooo excited"
+        src="pics/2019-10-31_13-57-31_UTC.jpg"
+        data-image="pics/2019-10-31_13-57-31_UTC.jpg"
+        data-description="Oh, is it raining outside?.. I am sooo excited"
+      /><img
+        alt="Good morning"
+        src="pics/2019-08-29_15-34-54_UTC.jpg"
+        data-image="pics/2019-08-29_15-34-54_UTC.jpg"
+        data-description="Good morning"
+      /><img
+        alt="Scratchy scratchy"
+        src="pics/2019-12-06_21-22-25_UTC.jpg"
+        data-image="pics/2019-12-06_21-22-25_UTC.jpg"
+        data-description="Scratchy scratchy"
+      /><img
+        alt="A sleepy rainy day 🌧"
+        src="pics/2019-04-20_20-09-55_UTC.jpg"
+        data-image="pics/2019-04-20_20-09-55_UTC.jpg"
+        data-description="A sleepy rainy day 🌧"
+      /><img
+        alt="🐷 💤"
+        src="pics/2020-02-19_17-55-35_UTC.jpg"
+        data-image="pics/2020-02-19_17-55-35_UTC.jpg"
+        data-description="🐷 💤"
+      /><img
+        alt=""
+        src="pics/2020-03-22_02-11-48_UTC.jpg"
+        data-image="pics/2020-03-22_02-11-48_UTC.jpg"
+        data-description=""
+      /><img
+        alt="My doctor prescribed me the cone of shame. I am fine as long as I feel better after the minor surgery."
+        src="pics/2017-10-14_21-47-20_UTC.jpg"
+        data-image="pics/2017-10-14_21-47-20_UTC.jpg"
+        data-description="My doctor prescribed me the cone of shame. I am fine as long as I feel better after the minor surgery."
+      /><img
+        alt="6 years ago #throwbackthursday"
+        src="pics/2017-08-10_21-04-23_UTC.jpg"
+        data-image="pics/2017-08-10_21-04-23_UTC.jpg"
+        data-description="6 years ago #throwbackthursday"
+      /><img
+        alt="Oh no! There is #rain  again 😒"
+        src="pics/2017-10-29_17-45-30_UTC.jpg"
+        data-image="pics/2017-10-29_17-45-30_UTC.jpg"
+        data-description="Oh no! There is #rain  again 😒"
+      /><img
+        alt="“Get this phone out of my face, please. Thank you.”"
+        src="pics/2021-12-07_05-33-03_UTC.jpg"
+        data-image="pics/2021-12-07_05-33-03_UTC.jpg"
+        data-description="“Get this phone out of my face, please. Thank you.”"
+      /><img
+        alt="Had a little surgery and while recovering I am in a cage to restrict my movements and have to wear this come of shame again. Ugh."
+        src="pics/2020-02-08_18-01-54_UTC.jpg"
+        data-image="pics/2020-02-08_18-01-54_UTC.jpg"
+        data-description="Had a little surgery and while recovering I am in a cage to restrict my movements and have to wear this come of shame again. Ugh."
+      /><img
+        alt="Mornings are hard..."
+        src="pics/2020-12-23_13-32-36_UTC.jpg"
+        data-image="pics/2020-12-23_13-32-36_UTC.jpg"
+        data-description="Mornings are hard..."
+      /><img
+        alt="Photo by @shorelinepetlodge"
+        src="pics/2021-12-16_04-08-54_UTC.jpg"
+        data-image="pics/2021-12-16_04-08-54_UTC.jpg"
+        data-description="Photo by @shorelinepetlodge"
+      /><img
+        alt="When I was a Frenchie baby #throwbackthursday"
+        src="pics/2017-06-29_23-29-36_UTC.jpg"
+        data-image="pics/2017-06-29_23-29-36_UTC.jpg"
+        data-description="When I was a Frenchie baby #throwbackthursday"
+      /><img
+        alt="Behind the scenes"
+        src="pics/2020-03-22_20-56-40_UTC.jpg"
+        data-image="pics/2020-03-22_20-56-40_UTC.jpg"
+        data-description="Behind the scenes"
+      /><img alt=""Are you leaving again?...." #sadfrenchie"
+      src="pics/2017-07-18_13-31-51_UTC.jpg" data-image="pics/2017-07-18_13-31-51_UTC.jpg"
+      data-description=""Are you leaving again?...." #sadfrenchie"><img
+        alt="Lap dog in a purple light"
+        src="pics/2017-07-17_03-35-02_UTC.jpg"
+        data-image="pics/2017-07-17_03-35-02_UTC.jpg"
+        data-description="Lap dog in a purple light"
+      /><img
+        alt="Observing the city 🗽"
+        src="pics/2018-01-19_17-24-25_UTC.jpg"
+        data-image="pics/2018-01-19_17-24-25_UTC.jpg"
+        data-description="Observing the city 🗽"
+      /><img
+        alt="My humans took me to the country, and here I have a whole couch all to myself 💤"
+        src="pics/2020-10-19_17-48-50_UTC.jpg"
+        data-image="pics/2020-10-19_17-48-50_UTC.jpg"
+        data-description="My humans took me to the country, and here I have a whole couch all to myself 💤"
+      /><img
+        alt="“Who needs to wake up this early on Saturday?” 🤔"
+        src="pics/2022-06-04_12-59-43_UTC.jpg"
+        data-image="pics/2022-06-04_12-59-43_UTC.jpg"
+        data-description="“Who needs to wake up this early on Saturday?” 🤔"
+      /><img
+        alt="Playing with my prey"
+        src="pics/2019-03-30_17-43-59_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2019-03-30_17-43-59_UTC.jpg"
+        data-videomp4="2019-03-30_17-43-59_UTC.mp4"
+        data-description="Playing with my prey"
+      /><img
+        alt="There is something with this pillow"
+        src="pics/2017-09-26_21-36-56_UTC.jpg"
+        data-image="pics/2017-09-26_21-36-56_UTC.jpg"
+        data-description="There is something with this pillow"
+      /><img
+        alt="I always pick the best spot ☀️"
+        src="pics/2019-05-25_20-33-08_UTC.jpg"
+        data-image="pics/2019-05-25_20-33-08_UTC.jpg"
+        data-description="I always pick the best spot ☀️"
+      /><img
+        alt="Darth Zelda, the Sith Lord"
+        src="pics/2018-09-20_03-33-26_UTC.jpg"
+        data-image="pics/2018-09-20_03-33-26_UTC.jpg"
+        data-description="Darth Zelda, the Sith Lord"
+      /><img
+        alt="   #frenchbullsogsofinstagram"
+        src="pics/2020-07-27_18-37-28_UTC.jpg"
+        data-image="pics/2020-07-27_18-37-28_UTC.jpg"
+        data-description="   #frenchbullsogsofinstagram"
+      /><img alt=""Dis is fur u!" 🐶🌹" src="pics/2017-05-04_03-21-31_UTC.jpg"
+      data-image="pics/2017-05-04_03-21-31_UTC.jpg" data-description=""Dis is fur u!"
+      🐶🌹"><img
+        alt="Another hero is on lookout for the city"
+        src="pics/2017-11-27_04-39-04_UTC.jpg"
+        data-image="pics/2017-11-27_04-39-04_UTC.jpg"
+        data-description="Another hero is on lookout for the city"
+      /><img alt=""I am watching you"" src="pics/2017-05-10_00-56-18_UTC.jpg"
+      data-image="pics/2017-05-10_00-56-18_UTC.jpg" data-description=""I am watching
+      you""><img
+        alt="👅"
+        src="pics/2018-09-03_23-13-10_UTC.jpg"
+        data-image="pics/2018-09-03_23-13-10_UTC.jpg"
+        data-description="👅"
+      /><img
+        alt="Cozy with my daddy 🖤"
+        src="pics/2019-12-20_01-55-00_UTC.jpg"
+        data-image="pics/2019-12-20_01-55-00_UTC.jpg"
+        data-description="Cozy with my daddy 🖤"
+      /><img
+        alt=""
+        src="pics/2017-10-30_21-01-49_UTC.jpg"
+        data-image="pics/2017-10-30_21-01-49_UTC.jpg"
+        data-description=""
+      /><img
+        alt="What exactly do you mean by “get off my pillow”?"
+        src="pics/2019-04-05_01-16-01_UTC.jpg"
+        data-image="pics/2019-04-05_01-16-01_UTC.jpg"
+        data-description="What exactly do you mean by “get off my pillow”?"
+      /><img
+        alt="My favorite flower 🌹"
+        src="pics/2019-02-28_00-56-17_UTC.jpg"
+        data-image="pics/2019-02-28_00-56-17_UTC.jpg"
+        data-description="My favorite flower 🌹"
+      /><img
+        alt="Ready for the next round! #letsgorangers rangers"
+        src="pics/2017-04-26_22-13-48_UTC.jpg"
+        data-image="pics/2017-04-26_22-13-48_UTC.jpg"
+        data-description="Ready for the next round! #letsgorangers rangers"
+      /><img
+        alt="Why are you watching TV? Look at me, I am better!"
+        src="pics/2017-11-19_05-16-39_UTC.jpg"
+        data-image="pics/2017-11-19_05-16-39_UTC.jpg"
+        data-description="Why are you watching TV? Look at me, I am better!"
+      /><img
+        alt=""
+        src="pics/2020-08-15_16-11-25_UTC.jpg"
+        data-image="pics/2020-08-15_16-11-25_UTC.jpg"
+        data-description=""
+      /><img
+        alt="Isn’t this my pillow?"
+        src="pics/2020-01-05_18-55-13_UTC.jpg"
+        data-image="pics/2020-01-05_18-55-13_UTC.jpg"
+        data-description="Isn’t this my pillow?"
+      /><img
+        alt="🐰"
+        src="pics/2019-12-19_04-19-45_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2019-12-19_04-19-45_UTC.jpg"
+        data-videomp4="2019-12-19_04-19-45_UTC.mp4"
+        data-description="🐰"
+      /><img
+        alt="Sleepin’ on my hooman’s pillow 💤"
+        src="pics/2018-11-05_22-10-42_UTC.jpg"
+        data-image="pics/2018-11-05_22-10-42_UTC.jpg"
+        data-description="Sleepin’ on my hooman’s pillow 💤"
+      /><img
+        alt="Grateful for the new bulldog lair"
+        src="pics/2020-11-26_17-29-35_UTC.jpg"
+        data-image="pics/2020-11-26_17-29-35_UTC.jpg"
+        data-description="Grateful for the new bulldog lair"
+      /><img
+        alt=""
+        src="pics/2021-07-24_23-38-17_UTC.jpg"
+        data-type="html5video"
+        data-image="pics/2021-07-24_23-38-17_UTC.jpg"
+        data-videomp4="2021-07-24_23-38-17_UTC.mp4"
+        data-description=""
+      /><img
+        alt="👀
+.
+."
+        src="pics/2018-11-16_01-52-49_UTC.jpg"
+        data-image="pics/2018-11-16_01-52-49_UTC.jpg"
+        data-description="👀
+.
+."
+      /><img
+        alt="Many years ago I rocked my truck high beams #halloween costume 🎃 #flashback"
+        src="pics/2020-10-31_22-57-45_UTC.jpg"
+        data-image="pics/2020-10-31_22-57-45_UTC.jpg"
+        data-description="Many years ago I rocked my truck high beams #halloween costume 🎃 #flashback"
+      /><img
+        alt="Taking a nap on my human is one of my most favorite things to do."
+        src="pics/2017-05-29_16-14-15_UTC.jpg"
+        data-image="pics/2017-05-29_16-14-15_UTC.jpg"
+        data-description="Taking a nap on my human is one of my most favorite things to do."
+      />
+    </div>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery("#gallery").unitegallery({
+          tiles_type: "justified",
+          tiles_justified_row_height: 300,
+          theme_appearance_order: "shuffle",
+          tiles_justified_space_between: 0,
+        });
+      });
+    </script>
+    <div class="profile">
+      <a href="https://twitter.com/artk4y"
+        ><img src="artkay.png" class="profile_pic"
+      /></a>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-110316702-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-110316702-2");
+    </script>
+  </body>
+</html>
