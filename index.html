@@ -46,18 +46,71 @@
       type="text/css"
     />
     <script defer src="https://cloud.umami.is/script.js" data-website-id="839673c9-e22d-4919-9adb-5e02551ea4a8"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap"
+    />
+    <style>
+      body {
+        background: #000;
+        color: #fff;
+        margin: 0;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .memorial-intro {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #bbb;
+        margin-top: 60px;
+      }
+      .memorial-name {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(4rem, 14vw, 9rem);
+        letter-spacing: 0.02em;
+        line-height: 1;
+        margin: 0.2em 0 0.1em;
+      }
+      .memorial-subtitle {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 1.5rem;
+        color: #ddd;
+        letter-spacing: 0.05em;
+      }
+      .memorial-dates {
+        font-weight: 300;
+        font-size: 0.95rem;
+        letter-spacing: 0.15em;
+        color: #aaa;
+        margin-top: 28px;
+        margin-bottom: 100px;
+      }
+      .memorial-portrait {
+        max-width: 300px;
+        margin-top: 36px;
+        border-radius: 4px;
+      }
+    </style>
   </head>
-  <body style="background: #000; color: #fff; margin: 0">
+  <body>
     <div class="container-fluid p-4">
-      <p class="text-center" style="margin-top: 50px">In loving memory of</p>
-      <h1 class="display-1 text-center">Zelda</h1>
-      <h5 class="text-center">The French Bulldog</h5>
+      <p class="text-center memorial-intro">In loving memory of</p>
+      <h1 class="text-center memorial-name">Zelda</h1>
+      <h5 class="text-center memorial-subtitle">The French Bulldog</h5>
       <img
-        class="mx-auto d-block"
-        style="max-width: 300px; margin-top: 20px"
+        class="mx-auto d-block memorial-portrait"
         src="pics/2019-06-22_13-45-00_UTC.jpg"
       />
-      <h5 class="text-center" style="margin-top: 20px; margin-bottom: 100px">
+      <h5 class="text-center memorial-dates">
         March 2011 &mdash; April 2024
       </h5>
     </div>
